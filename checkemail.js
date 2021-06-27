@@ -1,6 +1,6 @@
 function isEmail(email) {
 
-	regExp = /^\w+\.\w+@[a-z]+\.\w{3}$/
+	regExp = /^[\w+\.?\w+@\w{6}\.\w{3}]$/
 
 	let c = regExp.test(email);
 
@@ -9,7 +9,7 @@ function isEmail(email) {
 }
 
 
-console.log(isEmail('norayr.cv@gmail.com'));
+console.log(isEmail('norayr.cv@mail.ru'));
 
 console.log(isEmail('norayr.cvgmail.com'));
 
