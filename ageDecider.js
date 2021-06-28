@@ -1,18 +1,33 @@
 function findAge(yearOfBirth) {
 
 
-	let now = Date.now();
+	let now = new Date();
+	let currentyear = now.getFullYear();
+	let currentmonth = now.getMonth();
+	let currentday = now.getDate();
 	
-	let past = new Date(yearOfBirth).getTime();
+	
+	let birthdate = new Date(yearOfBirth);
+	let birthyear = birthdate.getFullYear();
+	let birthmonth = birthdate.getMonth();
+	let birthday = birthdate.getDate();
 
-    console.log(past);
+    
+	if(birthmonth < currentmonth) {
+		return currentyear - birthyear;
+	}
+	else if(birthmonth == currentmonth && birthday <= currentday) {
+		return currentyear - birthyear;
+	}
 	
-	console.log(Math.floor((now-past) /(3600*1000*24*365)));
+	else {
+		return currentyear - birthyear -1;
+	}
 	
 	
 }
 
 
-findAge('1994-06-15');
+console.log(findAge('1994-06-28'));
 
 
